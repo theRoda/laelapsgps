@@ -1,6 +1,10 @@
 #import sdcard
 from time import sleep
 from machine import UART
+import uping
+
+connectWifi()
+uping.ping('8.8.8.8')
 
 gps = UART(2, baudrate=9600)
 print(gps)
@@ -16,3 +20,4 @@ while True:
                 print(decoded)
         except UnicodeError:
             pass
+
